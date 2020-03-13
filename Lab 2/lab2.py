@@ -1,11 +1,11 @@
-import numpy as np
+import numpy
 import copy
 import time
 
 class State:
     def __init__(self, size):
         self.size = size
-        self.matrix = np.zeros((size, size), dtype=int).tolist()
+        self.matrix = numpy.zeros((size, size), dtype=int).tolist()
 
     def getMatrix(self):
         return self.matrix
@@ -30,7 +30,7 @@ class State:
     def isMatrixValid(self):
         for i in range(self.size):
             for j in range(self.size):
-                if self.matrix[i][j] == 1 and self.isPositionValid(i, j):
+                if self.matrix[i][j] == 1 and not self.isPositionValid(i, j):
                     return False
         return True
     
@@ -143,16 +143,16 @@ class UI:
         print('''Please choose your option:
     1. Change the size (4 as default)
     2. DFS
-    3. GBFS
+    3. Greedy
     0. Exit
         ''')
     
     def solve(self, alg):
         start = time.time()
         result = None
-        if(alg == "DFS" or alg == "dfs"):
+        if(alg == "dfs"):
             result = self.controller.dfs()
-        elif(alg == "GBFS" or alg == "gbfs"):
+        elif(alg == "gbfs"):
             result = self.controller.gbfs()
         stop = time.time()
         if result != None:
@@ -198,9 +198,8 @@ def tests():
             assert (states[0].isPositionValid(i, j))
     assert (len(states[0].nextConf()) == 9)
 
-    # assert (Problem.heuristic(problems, states[0]) == 9)
+    # print(Problem.expend(states[0]))
     assert (Problem.isSolved(states[0]) == False)
-    print(Problem.heuristic(states[0]))
 
     assert (controllers[0].dfs() is None)
     assert (controllers[0].gbfs() is None)
