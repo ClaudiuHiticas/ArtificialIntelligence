@@ -198,7 +198,6 @@ def tests():
             assert (states[0].isPositionValid(i, j))
     assert (len(states[0].nextConf()) == 9)
 
-    # print(Problem.expend(states[0]))
     assert (Problem.isSolved(states[0]) == False)
 
     assert (controllers[0].dfs() is None)
