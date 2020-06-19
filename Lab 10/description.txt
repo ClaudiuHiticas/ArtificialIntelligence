@@ -1,0 +1,46 @@
+Theory of possibility (fuzzy)
+
+KB (knowledge base): info of the domain
+- logic based on ranges
+- store all info
+IE (inference engine)
+- brain
+- explore the KB by reasoning for obtaining solutions / conclusions
+
+1. define inputs/ outputs (fuzzification)
+	- membership functions for each input data
+	- transform each raw input data into a linguistic data
+2. construct a base of rules (decision matrix) -IE
+3. evaluate the rules (fuzzy inference) -IE
+	1. EVALUATION OF CAUSES = For each premise of a rule (if s is (in) A) establish the membership degree of raw
+input data to all fuzzy sets
+	 => degree of satisfaction
+
+	SUGENO MODEL - consequence of rule: output variable is a crisp function that depends on inputs
+	- if x is in A and y is in B then z is f(x,y)
+
+	2. EVALUATION OF CONSEQUENCES
+
+4. aggregate the results -IE
+	- consider the membership functions for all the consequences and combine
+them into a single fuzzy set (a single result)
+
+Aggregation process has as:
+ Inputs: membership functions (clipped or scaled) of the consequences
+ Outputs: a fuzzy set of the output variable
+
+Sugeno model -> COA becomes a weighted average of m crisp
+values obtained by applying all m rules
+
+5. defuzzificate the result
+= transform the fuzzy result into a crisp (raw) value
+
+6. interpret the result
+
+ 
+ defuzzyficate = 50 = 50 * (1 - 0) + (50 * 0) 
+ defuzzyficate = 50 = 50 * (1 - 0) + (50 * 0) 
+ defuzzyficate = 0 = 50 * (1 - 1) + (50 * 0) 
+ defuzzyficate = 100.0 = 50 * (1 - 0) + (50 * 1.0) 
+ defuzzyficate = 50 = 50 * (1 - 0) + (50 * 0) 
+ defuzzyficate = 50 = 50 * (1 - 0) + (50 * 0)
